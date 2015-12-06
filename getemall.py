@@ -23,9 +23,10 @@ if found:
 	fecha = time.strftime("%H:%M:%S %d-%m-%Y")
 	os.makedirs(fecha)
 	os.chdir(fecha)
-	print 'Se están descargando archivos en el directorio %s'%fecha
 	count = 0
 	for item in found:
+		if count == 0:
+			print 'Se están descargando archivos en el directorio %s'%fecha
 		count += 1
 		G = open(item.group(2), 'w')
 		print item.group(2)
